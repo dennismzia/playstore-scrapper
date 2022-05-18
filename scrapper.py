@@ -14,7 +14,14 @@ import sys
 
 # baseurl  = "https://play.google.com/store/apps/category/ART_AND_DESIGN?hl=en&gl=us"
 # baseurl = "https://play.google.com/store/apps/collection/cluster?clp=ogo5CAESD01VU0lDX0FORF9BVURJTxocChZyZWNzX3RvcGljX3lfUloteWtSbDRvEDsYAyoCCAdSAggC:S:ANO1ljKJICM&gsr=CjyiCjkIARIPTVVTSUNfQU5EX0FVRElPGhwKFnJlY3NfdG9waWNfeV9SWi15a1JsNG8QOxgDKgIIB1ICCAI%3D:S:ANO1ljLvuBk"
-baseurl  = sys.argv[1]
+usage = '''scrapper.py [url to apps category] eg
+scrapper.py "https://play.google.com/store/apps/category/ART_AND_DESIGN?hl=en&gl=us"
+'''
+try:
+    baseurl  = sys.argv[1]
+except IndexError:
+    print(usage);exit()
+
 appid = []
 validapps = []
 def excavator():
