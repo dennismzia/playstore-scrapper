@@ -3,10 +3,22 @@
 from google_play_scraper import app
 import json
 import datetime
+import sys
 
+
+print('''
+This displays app info when given the package name of an app
+    ''')
+appinfo = '''
+usage: ./playstore.py com.example.app
+'''
+try:
+    APP = sys.argv[1]
+except IndexError:
+    print(appinfo);exit()
 
 result = app(
-    'com.grabtaxi.passenger',
+    APP,
     lang='en', # defaults to 'en'
     country='us' # defaults to 'us'
 )
